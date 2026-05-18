@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center container mx-auto justify-between pt-3 p-2">
+    <div className="flex items-center container mx-auto justify-between pt-3 p-2 border-b-2">
       <Link href={"/"}>
         <Image src={logo} alt="logo" width={170} height={70} />
       </Link>
@@ -13,22 +13,22 @@ const Navbar = () => {
       <div className="md:block hidden">
         <ul className="flex font-semibold gap-5 text-sm">
           <Link href={"/"}>
-            <li>Home</li>
+            <li className="hover:text-[#5F6FFF]">Home</li>
           </Link>
           <Link href={"/all-doctors"}>
-            <li>All Doctors</li>
+            <li className="hover:text-[#5F6FFF]">All Doctors</li>
           </Link>
           <Link href={"/about"}>
-            <li>ABOUT</li>
+            <li className="hover:text-[#5F6FFF]">ABOUT</li>
           </Link>
           <Link href={"/contact"}>
-            <li>Contact</li>
+            <li className="hover:text-[#5F6FFF]">Contact</li>
           </Link>
         </ul>
       </div>
 
       <Link href={"/register"}>
-        <Button>Create account</Button>
+        <Button className="bg-[#5F6FFF]">Create account</Button>
       </Link>
     </div>
   );
