@@ -1,22 +1,18 @@
 import Image from "next/image";
-import logo from "../../public/assets/logo-prescripto.svg"
+import logo from "../../public/assets/logo-prescripto.svg";
 
 export default function Footer() {
   return (
-    <footer className=" pt-16">
+    <footer className="p-2 pt-16">
       <div className="container mx-auto">
-        
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
-          
-        
           <div>
-            
-              <Image src={logo} alt="fd" width={200} height={199}/>
-         
+            <Image src={logo} alt="fd" width={200} height={199} />
+
             <p className="mt-6 text-gray-600 leading-8 ">
-               DocAppoint helps patients connect with trusted doctors quickly
-              and easily. Book appointments online, manage schedules, and get
+              DocAppoint helps patients connect with trusted doctors quickly and
+              easily. Book appointments online, manage schedules, and get
               quality healthcare support anytime from the comfort of your home.
             </p>
           </div>
