@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <div className="container mx-auto md:mt-12 mt-7 mb-5">
-      <h1 className="text-3xl  text-center md:mb-5">
+      <h1 className="text-3xl text-gray-700 text-center md:mb-5">
         ABOUT <strong>US</strong>{" "}
       </h1>
       <div className="flex md:flex-row flex-col  max-w-7xl md:gap-10 gap-8 items-center p-3">

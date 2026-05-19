@@ -3,7 +3,7 @@ import contact from "../../../public/assets/contact.png"
 
 export default function ContactSection() {
   return (
-    <section className="md:py-20 py-8 md:px-6 px-2">
+    <section className="md:py-12 py-8 md:px-6 px-2">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2 className="text-center text-3xl font-semibold text-gray-700 md:mb-16 mb-8">
