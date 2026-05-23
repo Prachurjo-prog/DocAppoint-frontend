@@ -1,4 +1,30 @@
+"use client";
+
+import { authClient } from "@/lib/auth-client";
+
+import { redirect } from "next/navigation";
+
 export default function CreateAccount() {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const user = Object.fromEntries(formData.entries());
+    console.log(user);
+
+    const { data, error } = await authClient.signUp.email({
+      email: user.email,
+      password: user.password,
+      name: user.name,
+      image: user.image,
+    });
+    if (data) {
+      redirect("/login");
+    }
+    if (error) {
+      alert("error");
+    }
+  };
   return (
     <div className="min-h-[80vh] flex items-center justify-center ">
       <div className=" bg-white border border-gray-300 rounded-3xl md:p-8 p-5 shadow-sm">
@@ -12,7 +38,7 @@ export default function CreateAccount() {
         </p>
 
         {/* Form */}
-        <form className="space-y-3">
+        <form onSubmit={onSubmit} className="space-y-3">
           {/* Full Name */}
           <div>
             <label className="block text-gray-700 mb-2 font-medium">
@@ -21,7 +47,8 @@ export default function CreateAccount() {
 
             <input
               type="text"
-              placeholder=""
+              name="name"
+              placeholder="Full Name"
               className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
@@ -34,7 +61,20 @@ export default function CreateAccount() {
 
             <input
               type="email"
-              placeholder=""
+              name="email"
+              placeholder="email"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 mb-2 font-medium">
+              Image URL
+            </label>
+
+            <input
+              type="text"
+              name="image"
+              placeholder="http://..."
               className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
@@ -47,7 +87,8 @@ export default function CreateAccount() {
 
             <input
               type="password"
-              placeholder=""
+              name="password"
+              placeholder="Password"
               className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>

@@ -1,3 +1,4 @@
+
 import HeroSection from "@/Components/Banner";
 
 import DocSpeciality from "@/Components/DocSpeciality";
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <DocSpeciality />
       <DoctorPage />
+    
       <Promotion />
     </div>
   );

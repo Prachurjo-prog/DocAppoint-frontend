@@ -13,7 +13,7 @@ const DoctorPage = async () => {
     <div className="p-4 container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  py-10 ">
         {doctorData.map((doctor) => (
-          <Link href={`/all-doctors/${doctor.id}`} key={doctor._id}>
+          <Link href={`/all-doctors/${doctor._id}`} key={doctor._id}>
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
               {/* Image Container */}
               <div className="relative h-80 bg-linear-to-br from-purple-50 to-blue-50 flex items-center justify-center overflow-hidden">
